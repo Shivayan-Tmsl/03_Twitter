@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+       Twitter 
+    </title>
+    <link rel="stylesheet" href="./output.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <style>
+       
+        .first, .third {
+            scrollbar-width: none;
+            -ms-overflow-style: none; 
+            overflow-y: auto; 
+        }
+        .first::-webkit-scrollbar, .third::-webkit-scrollbar {
+            display: none; 
+        }
+        
+        
+        .third {
+            max-height: 100vh;
+        }
+        
+        
+        .second {
+            overflow-y: auto;
+        }
+        
+        
+        .first, .second, .third {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+
+<body class="bg-black text-white">
+    <div class="flex container mx-auto ">
+        <div class="first w-1/5 fixed top-0 h-screen">
+            <div class="logo invert ">
+                <svg viewBox="0 0 24 24" aria-hidden="true"
+                    class="w-8 r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-lrvibr r-m6rgpd r-lrsllp r-1nao33i r-16y2uox r-8kz0gk">
+                    <g>
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+                        </path>
+                    </g>
+                </svg>
+                <div class="sidebar">
+                    <ul class="flex flex-col invert text-2xl space-y-3">
+                        <li class = "flex gap-3 hover:bg-gray-700 hover:bg-opacity-80 rounded-full px-4 py-2 cursor-pointer transition-all duration-200 w-fit"><span class="material-symbols-outlined text-2xl">
+                            home
+                        </span><span class="hidden md:block">Home</span></li>
+                        <li class = "flex gap-3 hover:bg-gray-700 hover:bg-opacity-50 rounded-full px-4 py-2 cursor-pointer transition-all duration-200 w-fit"><span class="material-symbols-outlined text-2xl">
+                            search
+                        </span><span class="hidden md:block">Explore</span></li>
+                        <li class = "flex gap-3 hover:bg-gray-700 hover:bg-opacity-50 rounded-full px-4 py-2 cursor-pointer transition-all duration-200 w-fit"><span class="material-symbols-outlined text-2xl">
+                            add_alert
+                        </span><span class="hidden md:block">Notifications</span></li>
+                        <li class = "flex gap-3 hover:bg-gray-700 hover:bg-opacity-50 rounded-full px-4 py-2 cursor-pointer transition-all duration-200 w-fit"><span class="material-symbols-outlined text-2xl">
+                            mail
+                        </span><span class="hidden md:block">Messages</span></li>
+                        <li class = "flex gap-3 hover:bg-gray-700 hover:bg-opacity-50 rounded-full px-4 py-2 cursor-pointer transition-all duration-200 w-fit"><span class="material-symbols-outlined text-2xl">
+                            assistant_device
+                        </span><span class="hidden md:block">Grok</span></li>
+                        <li class = "flex gap-3 hover:bg-gray-700 hover:bg-opacity-50 rounded-full px-4 py-2 cursor-pointer transition-all duration-200 w-fit"><span class="material-symbols-outlined text-2xl">
+                            book
+                        </span><span class="hidden md:block">Bookmarks</span></li>
+                        <li class = "flex gap-3 hover:bg-gray-700 hover:bg-opacity-50 rounded-full px-4 py-2 cursor-pointer transition-all duration-200 w-fit"><span class="material-symbols-outlined text-2xl">
+                            business_center
+                        </span><span class="hidden md:block">Jobs</span></li>
+                        <li class = "flex gap-3 hover:bg-gray-700 hover:bg-opacity-50 rounded-full px-4 py-2 cursor-pointer transition-all duration-200 w-fit"><span class="material-symbols-outlined text-2xl">
+                            diversity_1
+                        </span><span class="hidden md:block">Communities</span></li>
+                        <li class = "flex gap-3 hover:bg-gray-700 hover:bg-opacity-50 rounded-full px-4 py-2 cursor-pointer transition-all duration-200 w-fit"><span class="material-symbols-outlined text-2xl">
+                            award_star
+                        </span><span class="hidden md:block"> Premium</span></li>
+                        <li class = "flex gap-3 hover:bg-gray-700 hover:bg-opacity-50 rounded-full px-4 py-2 cursor-pointer transition-all duration-200 w-fit"><span class="material-symbols-outlined text-2xl">
+                            bolt
+                        </span><span class="hidden md:block">Verified Orgs</span></li>
+                        <li class = "flex gap-3 hover:bg-gray-700 hover:bg-opacity-50 rounded-full px-4 py-2 cursor-pointer transition-all duration-200 w-fit"><span class="material-symbols-outlined text-2xl">
+                            account_box
+                        </span><span class="hidden md:block">Profile</span></li>
+                        <li class = "flex gap-3 hover:bg-gray-700 hover:bg-opacity-50 rounded-full px-4 py-2 cursor-pointer transition-all duration-200 w-fit"><span class="material-symbols-outlined text-2xl">
+                            add_circle
+                        </span><span class="hidden md:block">More</span></li>
+                        <li class=" ">
+                            <button class="bg-white text-black rounded-2xl w-4/5 px-4 py-2 hover:bg-blue-500">
+                                Post
+                            </button>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="second w-full md:w-3/5 border-l-[1px] md:border-r-[1px] border-white ml-[20%]">
+            <div class="w-full text-center border-b border-gray-700 flex p-3 relative">
+                <div class=" w-1/2 py-2 cursor-pointer font-bold flex justify-center relative">
+                    <span>For You</span>
+                    <div
+                        class="absolute bottom-[-8px] h-[4px] w-[20%] bg-blue-500 rounded-full ">
+                    </div>
+                </div>
+                <div class=" w-1/2 py-2 cursor-pointer  font-bold ">Following</div>
+            </div>
+
+            <div class="h-[1px] w-full bg-gray-700"></div>
+
+            <div class="whatshapp flex gap-4 my-3">
+                <div class="img m-2">
+                    <img src="https://pbs.twimg.com/profile_images/1491290401843867649/PyZYR4Cj_bigger.png" alt=""
+                        class="h-10 w-10 rounded-full ">
+                </div>
+                <div class="w-full">
+                    <input type="text" placeholder="What's happening?"
+                        class="text-xl w-full h-7 my-2 outline-none rounded full bg-black text-white px-4 py-2">
+                    <div class="text-blue-600 flex items-center gap-3 w-full">
+                        <span class="material-symbols-outlined ">
+                            globe_asia
+                        </span>
+                        <span class="font-bold">Everyone can reply</span>
+
+                    </div>
+                    <div class="w-[90%] h-[0.2px] bg-gray-400 my-3"></div>
+                    <div class="blueicons flex gap-2">
+                        <span class="material-symbols-outlined text-blue-600">
+                            imagesmode
+                        </span>
+                        <span class="material-symbols-outlined text-blue-600">
+                            gif_box
+                        </span>
+                        <span class="material-symbols-outlined text-blue-600">
+                            ballot
+                        </span>
+                        <span class="material-symbols-outlined text-blue-600">
+                            sentiment_satisfied
+                        </span>
+                        <span class="material-symbols-outlined text-blue-600">
+                            calendar_clock
+                        </span>
+                        <span class="material-symbols-outlined text-blue-600">
+                            home_pin
+                        </span>
+                        <button
+                            class="bg-gray-500 text-black font-bold w-[66.34px] h-[36px] rounded-full ml-auto mr-4">Post</button>
+                    </div>
+                </div>
+
+            </div>
+            <hr>
+
+            <div class="posts">
+                <div class="post">
+                    <div class="flex">
+                        <div class="image m-4 flex-shrink-0 w-[30px] h-[30px]">
+                            <img src="https://pbs.twimg.com/profile_images/1491290401843867649/PyZYR4Cj_bigger.png"
+                                alt="" class="w-50 rounded-full object-cover">
+                        </div>
+                        <div class="content my-3 overflow-hidden">
+                            <span class="font-bold hover:underline text-white">
+                                Shivayan Dey
+                            </span><span class="text-gray-500"> @shivayan . 6h</span>
+                            <div> Download@Grok! </div>
+                            <div class="postimg m-4">
+                                <img src="https://pbs.twimg.com/media/Gve_L5rbkAAH-AI?format=jpg&name=4096x4096" alt=""
+                                    class="rounded-2xl w-full max-w-[500px] h-auto object-contain">
+                            </div>
+                            <div class="icons flex  bg-black w-full">
+                                <div class="icon flex items-center justify-around gap-19 text-gray-600">
+
+                                    <span class="material-symbols-outlined ">
+                                        chat_bubble
+                                    </span>
+                                
+
+                                    
+                                    <span class="material-symbols-outlined ">
+                                        repeat
+                                    </span>
+                                
+
+
+                                    
+                                    <span class="material-symbols-outlined ">
+                                        favorite
+                                    </span>
+                                
+
+
+                                    
+                                    <span class="material-symbols-outlined ">
+                                        equalizer
+                                    </span>
+                                
+
+
+                                    
+                                    <span class="material-symbols-outlined ">
+                                        bookmark
+                                    </span>
+                                
+
+                                    <div>
+                                        <span class="material-symbols-outlined ">
+                                            arrow_warm_up
+                                        </span>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <hr>
+
+                <div class="post">
+                    <div class="flex">
+                        <div class="image m-4 flex-shrink-0 w-[30px] h-[30px]">
+                            <img src="https://pbs.twimg.com/profile_images/1491290401843867649/PyZYR4Cj_bigger.png"
+                                alt="" class="w-50 rounded-full object-cover">
+                        </div>
+                        <div class="content my-3 overflow-hidden">
+                            <span class="font-bold hover:underline text-white">
+                                Shivayan Dey
+                            </span><span class="text-gray-500"> @shivayan . 6h</span>
+                            <div> I recently met with some bright young men from our 
+                                @MBK_Alliance
+                                 programs in Chicago and Newark who had the chance to go on a cultural exchange in Brazil. It was a life changing experience – and a reminder of why it’s so important to invest in our young people and give them a chance to experience different cultures and broaden their own understanding </div>
+                            <div class="postimg m-4 ">
+                                <blockquote class="twitter-tweet" data-media-max-width="560"><p lang="en" dir="ltr">I recently met with some bright young men from our <a href="https://twitter.com/MBK_Alliance?ref_src=twsrc%5Etfw">@MBK_Alliance</a> programs in Chicago and Newark who had the chance to go on a cultural exchange in Brazil. It was a life changing experience – and a reminder of why it’s so important to invest in our young people and give them a… <a href="https://t.co/gdJGQLOLNY">pic.twitter.com/gdJGQLOLNY</a></p>&mdash; Barack Obama (@BarackObama) <a href="https://twitter.com/BarackObama/status/1943370349950709864?ref_src=twsrc%5Etfw">July 10, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            </div>
+                            <div class="icons flex  bg-black w-full">
+                                <div class="icon flex items-center justify-around gap-19 text-gray-600">
+
+                                    <span class="material-symbols-outlined ">
+                                        chat_bubble
+                                    </span>
+                                
+
+                                    
+                                    <span class="material-symbols-outlined ">
+                                        repeat
+                                    </span>
+                                
+
+
+                                    
+                                    <span class="material-symbols-outlined ">
+                                        favorite
+                                    </span>
+                                
+
+
+                                    
+                                    <span class="material-symbols-outlined ">
+                                        equalizer
+                                    </span>
+                                
+
+
+                                    
+                                    <span class="material-symbols-outlined ">
+                                        bookmark
+                                    </span>
+                                
+
+                                    <div>
+                                        <span class="material-symbols-outlined ">
+                                            arrow_warm_up
+                                        </span>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <hr>
+
+                <div class="post">
+                    <div class="flex">
+                        <div class="image m-4 flex-shrink-0 w-[30px] h-[30px]">
+                            <img src="https://pbs.twimg.com/profile_images/1491290401843867649/PyZYR4Cj_bigger.png"
+                                alt="" class="w-50 rounded-full object-cover">
+                        </div>
+                        <div class="content my-3 overflow-hidden">
+                            <span class="font-bold hover:underline text-white">
+                                Shivayan Dey
+                            </span><span class="text-gray-500"> @shivayan . 6h</span>
+                            <div> We are so proud of you DINO! </div>
+                            <div class="postimg m-4">
+                                <img src="https://pbs.twimg.com/media/GvhSz6bXsAECvEB?format=jpg&name=small" alt=""
+                                    class="rounded-2xl">
+                            </div>
+                            <div class="icons flex  bg-black w-full">
+                                <div class="icon flex items-center justify-around gap-19 text-gray-600">
+
+                                    <span class="material-symbols-outlined ">
+                                        chat_bubble
+                                    </span>
+                                
+
+                                    
+                                    <span class="material-symbols-outlined ">
+                                        repeat
+                                    </span>
+                                
+
+
+                                    
+                                    <span class="material-symbols-outlined ">
+                                        favorite
+                                    </span>
+                                
+
+
+                                    
+                                    <span class="material-symbols-outlined ">
+                                        equalizer
+                                    </span>
+                                
+
+
+                                    
+                                    <span class="material-symbols-outlined ">
+                                        bookmark
+                                    </span>
+                                
+
+                                    <div>
+                                        <span class="material-symbols-outlined ">
+                                            arrow_warm_up
+                                        </span>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <hr>
+
+                <div class="post">
+                    <div class="flex">
+                        <div class="image m-4 flex-shrink-0 w-[30px] h-[30px]">
+                            <img src="https://pbs.twimg.com/profile_images/1491290401843867649/PyZYR4Cj_bigger.png"
+                                alt="" class="w-full h-full rounded-full object-cover"/>
+                        </div>
+                        <div class="content my-3 overflow-hidden">
+                            <span class="font-bold hover:underline text-white">
+                                Shivayan Dey
+                            </span><span class="text-gray-500"> @shivayan . 6h</span>
+                            <div> Download@Grok! </div>
+                            <div class="postimg m-4">
+                                <blockquote class="twitter-tweet" data-media-max-width="560"><p lang="zxx" dir="ltr"><a href="https://t.co/f8ui5rcBwT">pic.twitter.com/f8ui5rcBwT</a></p>&mdash; Elon Musk (@elonmusk) <a href="https://twitter.com/elonmusk/status/1943460753253765163?ref_src=twsrc%5Etfw">July 11, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            </div>
+                            <div class="icons flex  bg-black w-full">
+                                <div class="icon flex items-center justify-around gap-19 text-gray-600">
+
+                                    <span class="material-symbols-outlined ">
+                                        chat_bubble
+                                    </span>
+                                
+
+                                    
+                                    <span class="material-symbols-outlined ">
+                                        repeat
+                                    </span>
+                                
+
+
+                                    
+                                    <span class="material-symbols-outlined ">
+                                        favorite
+                                    </span>
+                                
+
+
+                                    
+                                    <span class="material-symbols-outlined ">
+                                        equalizer
+                                    </span>
+                                
+
+
+                                    
+                                    <span class="material-symbols-outlined ">
+                                        bookmark
+                                    </span>
+                                
+
+                                    <div>
+                                        <span class="material-symbols-outlined ">
+                                            arrow_warm_up
+                                        </span>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <hr>
+
+                <div class="post w-full overflow-x-hidden">
+                    <div class="flex">
+                        <div class="image m-4 flex-shrink-0 w-[30px] h-[30px]">
+                            <img src="https://pbs.twimg.com/profile_images/1491290401843867649/PyZYR4Cj_bigger.png"
+                                alt="" class="  w-full h-full rounded-full object-cover"/>
+                        </div>
+                        <div class="content overflow-hidden my-3">
+                            <span class="font-bold hover:underline text-white">
+                                Shivayan Dey
+                            </span><span class="text-gray-500"> @shivayan . 6h</span>
+                            <div> Interacted with MPs from Namibia after my address to their Parliament. Their positivity towards India is clearly visible! </div>
+                            <div class="postimg m-4 ">
+                                <img src="https://pbs.twimg.com/media/Gvbc7aFbgAAgBd3?format=jpg&name=small" alt=""
+                                    class="rounded-2xl w-full h-auto object-contain">
+                            </div>
+                            <div class="icons flex  bg-black w-full">
+                                <div class="icon flex items-center justify-around gap-19 text-gray-600">
+
+                                    <span class="material-symbols-outlined ">
+                                        chat_bubble
+                                    </span>
+                                
+
+                                    
+                                    <span class="material-symbols-outlined ">
+                                        repeat
+                                    </span>
+                                
+
+
+                                    
+                                    <span class="material-symbols-outlined ">
+                                        favorite
+                                    </span>
+                                
+
+
+                                    
+                                    <span class="material-symbols-outlined ">
+                                        equalizer
+                                    </span>
+                                
+
+
+                                    
+                                    <span class="material-symbols-outlined ">
+                                        bookmark
+                                    </span>
+                                
+
+                                    <div>
+                                        <span class="material-symbols-outlined ">
+                                            arrow_warm_up
+                                        </span>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <hr>
+            </div>
+        </div>
+        <div class="third hidden md:block sticky top-0 px-4">
+            <div class="search my-2 ml-3">
+                <input type="text" class=" w-full rounded-full bg-gray-900 text-white px-4 py-2" placeholder="search">
+            </div>
+            <div class="subscribe bg-gray-900 w-full rounded-4xl my-2 ml-3 mr-3 p-4">
+                <h1 class="font-bold text-2xl">Subscribe to Premium</h1>
+                <h2>Subscribe to unlock new features and if eligible, receive a share of revenue.</h2>
+                <button class="bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded-full mt-2">Subscribe</button>
+            </div>
+            <div class="whats w-full my-2 ml-3">
+                <img src="whats.jpeg" alt="" class="w-full" />
+            </div>
+            <div class="follow w-full my-2 border-[1px] border-white rounded-xl h-80 px-4 py-4 ml-4">
+                <h1 class="text-white font-bold text-2xl">Who to follow</h1>
+                <ul>
+                    <li class="text-white text-xl py-4 flex items-center justify-between">
+                        <span class="flex items-center gap-2">
+                            <span class="material-symbols-outlined">account_circle</span>
+                            Rohit Sharma
+                        </span>
+                        <button
+                            class="bg-white text-black hover:bg-gray-500 px-4 py-2 rounded-full mt-0">Follow</button>
+                    </li>
+                    <li class="text-white text-xl py-4 flex items-center justify-between">
+                        <span class="flex items-center gap-2">
+                            <span class="material-symbols-outlined">account_circle</span>
+                            PMO India
+                        </span>
+                        <button
+                            class="bg-white text-black hover:bg-gray-500 px-4 py-2 rounded-full mt-0">Follow</button>
+                    </li>
+                    <li class="text-white text-xl py-4 flex items-center justify-between">
+                        <span class="flex items-center gap-2">
+                            <span class="material-symbols-outlined">account_circle</span>
+                            BCCI
+                        </span>
+                        <button
+                            class="bg-white text-black hover:bg-gray-500 px-4 py-2 rounded-full mt-0">Follow</button>
+                    </li>
+                    <li class="text-blue-600 px-3 mt-2 border-t border-gray-700">Show more</li>
+                </ul>
+            </div>
+            <div class="extra">
+                <img class="px-10 py-3" src="extra.png" alt="" srcset="">
+            </div>
+        </div>
+    </div>
+    <script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</body>
+
+</html>
